@@ -1,0 +1,29 @@
+<div class="h-screen bg-cyan-300">
+  <form class="flex flex-col p-2" [formGroup]="tarefaForms" (ngSubmit)="inserir()">
+    <label class="font-bold" for="titulo">Titulo: </label>
+    <input class="rounded-lg border border-cyan-500 p-2" type="text" name="titulo" id="titulo" placeholder="Titulo" formControlName="titulo" />
+
+    <label class="font-bold" for="descricao">Descrição: </label>
+    <input class="rounded-lg border border-cyan-500 p-2" type="text" name="descricao" id="descricao" placeholder="Descrição" formControlName="descricao" />
+
+    <label class="font-bold" for="dataDeVencimento">Data de Vencimento: </label>
+    <input class="rounded-lg border border-cyan-500 p-2" type="date" name="dataDeVencimento" id="dataDeVencimento" formControlName="dataDeVencimento" />
+
+    <button class="m-2 rounded-lg bg-cyan-500 p-2 font-bold" type="submit">Enviar</button>
+  </form>
+
+  <h2 class="text-center text-2xl font-bold">Listar</h2>
+
+  <ul>
+    @for (item of tarefas; track $index){
+    <li class="p2 bg-cyan-500 mx-3 text-white font-bold flex justify-between items-center	px-4">
+      <span>{{item.id}}</span>
+      <span>{{item.titulo}}</span>
+      <span>{{item.descricao}}</span>
+      <span>{{item.dataDeVencimento}}</span>
+      <input class="m-2 rounded-lg bg-cyan-200 p-2 font-bold text-black" type="button" name="remover" id="remover" value="remover" (click)="remover(item.id)" />
+    </li>
+
+    }
+  </ul>
+</div>
