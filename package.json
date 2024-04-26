@@ -7,15 +7,18 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:new-app": "node dist/new-app/server/server.mjs"
+    "serve:ssr:new-app": "node dist/new-app/server/server.mjs",
+    "server" : "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.2.0",
-    "@angular/common": "^17.2.0",
+    "@angular/cdk": "^17.3.6",
+    "@angular/common": "^17.3.6",
     "@angular/compiler": "^17.2.0",
     "@angular/core": "^17.2.0",
     "@angular/forms": "^17.2.0",
+    "@angular/material": "^17.3.6",
     "@angular/platform-browser": "^17.2.0",
     "@angular/platform-browser-dynamic": "^17.2.0",
     "@angular/platform-server": "^17.2.0",
@@ -23,6 +26,7 @@
     "@angular/ssr": "^17.2.0",
     "express": "^4.18.2",
     "global": "^4.4.0",
+    "json-server": "^1.0.0-alpha.23",
     "rxjs": "~7.8.0",
     "zone.js": "~0.14.3"
   },

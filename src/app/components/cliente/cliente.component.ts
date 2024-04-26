@@ -1,14 +1,13 @@
+import { Cliente } from './../../interfaces/Cliente';
 import { Component } from '@angular/core';
 import { ClienteService } from '../../services/cliente.service';
-import { Cliente } from '../../interfaces/Cliente';
-import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cliente',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule ],
+  imports: [ReactiveFormsModule ],
   templateUrl: './cliente.component.html',
   styleUrl: './cliente.component.css'
 })
@@ -48,7 +47,8 @@ export class ClienteComponent {
   }
 
   listar():void{
-      this.clientes = this.clienteService.listar();
+      this.clienteService.getAllClient().subscribe(
+        (clientes: Cliente[]) => (this.clientes = clientes));
   }
 
   ngOnInit():void{

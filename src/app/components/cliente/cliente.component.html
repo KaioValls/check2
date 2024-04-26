@@ -1,22 +1,33 @@
 
-<form [formGroup]="clientForm" (ngSubmit)="inserir()">
-  <label for="nome">Nome:</label>
-  <input type="text" name="nome" id="nome" placeholder="nome" formControlName="nome" >
+<div class="h-full w-full flex flex-col justify-center items-center">
 
-  <label for="telefone">Telefone</label>
-  <input type="number" name="telefone" id="telefone" formControlName="telefone">
+  <form class="flex flex-col w-full px-10 py-2 space-y-4 pt-6" [formGroup]="clientForm" (ngSubmit)="inserir()">
+    <label class="font-bold" for="nome">Nome:</label>
+    <input class="p-2 rounded-lg bg-gray-200" type="text" name="nome" id="nome" placeholder="nome" formControlName="nome" >
 
-  <button type="submit">Enviar</button>
-</form>
+    <label class="font-bold" for="telefone">Telefone:</label>
+    <input class="p-2 rounded-lg bg-gray-200" type="number" name="telefone" placeholder="(11) 91231-1234" id="telefone" formControlName="telefone">
 
-<h2>Listar </h2>
+    <button class="p-2 rounded-lg bg-green-500 text-white font-bold" type="submit">Enviar</button>
+  </form>
 
-<ul>
-  @for (item of clientes; track $index){
-     <li>  {{item.id}} - {{item.nome}} - {{item.telefone}}
-      <input type="button" name="remover" id="remover" value="remover" (click)="remover(item.id)">
-    </li>
+  <span class="h-12"></span>
 
-  }
-</ul>
+  <h2 class="text-xl font-bold" >Listar </h2>
+
+  <ul class="w-full p-10 rounded-lg">
+    @for (item of clientes; track $index){
+      <li class="flex justify-between items-center border-2 border-gray-300 px-4 py-1">
+        <p>{{item.id}}</p>
+        <p>{{item.nome}}</p>
+        <p>{{item.telefone}}</p>
+        <input class="px-4 py-2 bg-red-600 text-white rounded-lg" type="button" name="remover" id="remover" value="remover" (click)="remover(item.id)">
+      </li>
+
+
+    }
+  </ul>
+
+
+</div>
 

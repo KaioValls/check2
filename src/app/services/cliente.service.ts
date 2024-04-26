@@ -1,11 +1,21 @@
 import { Injectable } from '@angular/core';
 import {Cliente} from '../interfaces/Cliente';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
-  constructor() { }
+  constructor(private http: HttpClient) {
+
+   }
+
+   HTTPS = 'http://localhost:3000/clientes';
+
+   getAllClient(): Observable<Cliente[]>{
+    return this.http.get<Cliente[]>(this.HTTPS) as Observable<Cliente[]>;
+   }
 
   //Esta lista virá da API
   clientes:Cliente[] = [

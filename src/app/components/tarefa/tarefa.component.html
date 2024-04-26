@@ -1,5 +1,5 @@
-<div class="h-screen bg-cyan-300">
-  <form class="flex flex-col p-2" [formGroup]="tarefaForms" (ngSubmit)="inserir()">
+<div class="h-screen flex flex-col items-center mt-16">
+  <form class="flex flex-col p-2 w-80" [formGroup]="tarefaForms" (ngSubmit)="inserir()">
     <label class="font-bold" for="titulo">Titulo: </label>
     <input class="rounded-lg border border-cyan-500 p-2" type="text" name="titulo" id="titulo" placeholder="Titulo" formControlName="titulo" />
 
@@ -14,7 +14,7 @@
 
   <h2 class="text-center text-2xl font-bold">Listar</h2>
 
-  <ul>
+  <ul class="">
     @for (item of tarefas; track $index){
     <li class="p2 bg-cyan-500 mx-3 text-white font-bold flex justify-between items-center	px-4">
       <span>{{item.id}}</span>

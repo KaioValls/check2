@@ -1,0 +1,54 @@
+{
+  "clientes": [
+    {
+      "id": "123321",
+      "nome": "Thiago",
+      "telefone": "12121212"
+    },
+    {
+      "id": "12332133",
+      "nome": "Kaio",
+      "telefone": "3213213"
+    },
+    {
+      "id": "456654",
+      "nome": "Camila",
+      "telefone": "45454545"
+    },
+    {
+      "id": "789987",
+      "nome": "Lucas",
+      "telefone": "78787878"
+    },
+    {
+      "id": "101010",
+      "nome": "Maria",
+      "telefone": "10101010"
+    },
+    {
+      "id": "111222",
+      "nome": "João",
+      "telefone": "11111111"
+    },
+    {
+      "id": "131313",
+      "nome": "Carla",
+      "telefone": "13131313"
+    },
+    {
+      "id": "141414",
+      "nome": "Pedro",
+      "telefone": "14141414"
+    },
+    {
+      "id": "151515",
+      "nome": "Ana",
+      "telefone": "15151515"
+    },
+    {
+      "id": "161616",
+      "nome": "Paulo",
+      "telefone": "16161616"
+    }
+  ]
+}
